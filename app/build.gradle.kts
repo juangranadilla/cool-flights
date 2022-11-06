@@ -58,7 +58,6 @@ dependencies {
     androidTestImplementation(composeBom)
 
     implementation(Lib.core_ktx)
-    implementation(Lib.compose_material)
     implementation(Lib.compose_preview)
     implementation(Lib.compose_tooling_preview)
     implementation(Lib.activity_compose)
@@ -70,8 +69,7 @@ dependencies {
     implementation(Lib.coroutines)
     implementation(Lib.koin)
     implementation(Lib.koin_android)
-    implementation(Lib.glide)
-    annotationProcessor(Lib.glide_compiler)
+    implementation(Lib.coil_compose)
 }
 
 tasks.withType<KotlinCompile> {

@@ -10,5 +10,6 @@ data class City(
         private const val CITY_IMAGE_EXTENSION = ".jpg"
     }
 
-    fun getImageUrl() = "$CITY_IMAGE_BASE_URL${name}_$countryCode$CITY_IMAGE_EXTENSION"
+    fun getImageUrl() =
+        "$CITY_IMAGE_BASE_URL${name.lowercase()}_${countryCode.lowercase()}$CITY_IMAGE_EXTENSION"
 }

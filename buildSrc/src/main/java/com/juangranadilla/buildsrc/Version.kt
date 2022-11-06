@@ -18,14 +18,13 @@ object Lib {
         const val koin_version = "3.2.0"
         const val retrofit_version = "2.9.0"
         const val okhttp3_version = "4.10.0"
-        const val glide_version = "4.13.2"
+        const val coil_version = "2.2.2"
         const val activity_compose_version = "1.6.1"
         const val orbit_version = "0.21.0"
     }
 
     const val core_ktx = "androidx.core:core-ktx:${Version.core_ktx_version}"
     const val compose_bom = "androidx.compose:compose-bom:2022.10.00"
-    const val compose_material = "androidx.compose.material3:material3"
     const val compose_preview = "androidx.compose.ui:ui-tooling-preview"
     const val compose_tooling_preview = "androidx.compose.ui:ui-tooling"
     const val activity_compose = "androidx.activity:activity-compose:${Version.activity_compose_version}"
@@ -40,8 +39,7 @@ object Lib {
     const val retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit_version}"
     const val retrofit_gson_converter = "com.squareup.retrofit2:converter-gson:${Version.retrofit_version}"
     const val okhttp3_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${Version.okhttp3_version}"
-    const val glide = "com.github.bumptech.glide:glide:${Version.glide_version}"
-    const val glide_compiler = "com.github.bumptech.glide:compiler:${Version.glide_version}"
+    const val coil_compose = "io.coil-kt:coil-compose:${Version.coil_version}"
 }
 
 object TestLib {
