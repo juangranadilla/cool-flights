@@ -1,6 +1,7 @@
 package com.juangranadilla.data.remote
 
 import com.juangranadilla.data.remote.response.CoolFlightsResponse
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -26,5 +27,5 @@ interface FlightsService {
         @Query("adults") adults: Int,
         @Query("limit") limit: Int,
         @Query("partner") partner: String
-    ): CoolFlightsResponse
+    ): Response<CoolFlightsResponse>
 }

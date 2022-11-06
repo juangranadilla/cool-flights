@@ -2,6 +2,7 @@ package com.juangranadilla.data.remote
 
 import com.juangranadilla.data.remote.mapper.toModel
 import com.juangranadilla.domain.model.Flight
+import com.juangranadilla.domain.result.DataState
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -27,7 +28,7 @@ interface FlightsRemoteDataSource {
         adults: Int = 1,
         limit: Int = 45,
         partner: String = "skypicker-android"
-    ): List<Flight>
+    ): DataState<List<Flight>>
 }
 
 class FlightsRemoteDataSourceImpl(
@@ -53,8 +54,8 @@ class FlightsRemoteDataSourceImpl(
         adults: Int,
         limit: Int,
         partner: String
-    ): List<Flight> {
-        return service.getCoolFlights(
+    ): DataState<List<Flight>> {
+        val response = service.getCoolFlights(
             version,
             sort,
             asc,
@@ -73,11 +74,15 @@ class FlightsRemoteDataSourceImpl(
             adults,
             limit,
             partner
-        ).toModel()
+        )
+
+        return response.body()?.takeIf { response.isSuccessful }?.let {
+            DataState.Success(it.toModel())
+        } ?: DataState.Error("Error getting flights response from server")
     }
 }
 
 private fun getFormattedDate(time: Long): String = SimpleDateFormat(
-    "dd-mm-yyyyThh:mm",
+    "dd/MM/yyyy",
     Locale.ENGLISH
 ).format(time)

@@ -21,12 +21,15 @@ object Lib {
         const val coil_version = "2.2.2"
         const val activity_compose_version = "1.6.1"
         const val orbit_version = "0.21.0"
+        const val compose_viewmodel = "2.5.1"
     }
 
     const val core_ktx = "androidx.core:core-ktx:${Version.core_ktx_version}"
     const val compose_bom = "androidx.compose:compose-bom:2022.10.00"
     const val compose_preview = "androidx.compose.ui:ui-tooling-preview"
     const val compose_tooling_preview = "androidx.compose.ui:ui-tooling"
+    const val compose_livedata = "androidx.compose.runtime:runtime-livedata"
+    const val compose_viewmodel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.compose_viewmodel}"
     const val activity_compose = "androidx.activity:activity-compose:${Version.activity_compose_version}"
     const val orbit_compose_ui = "kiwi.orbit.compose:ui:${Version.orbit_version}"
     const val orbit_compose_icons = "kiwi.orbit.compose:icons:${Version.orbit_version}"

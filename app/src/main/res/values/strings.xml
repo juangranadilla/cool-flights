@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Cool Flights</string>
+    <string name="server_error_title">Error getting cool flights</string>
+    <string name="server_error_description">There was an error getting the coolest flights from our server. Please, try it later</string>
+    <string name="no_flights_title">No cool flights for today</string>
+    <string name="no_flights_description">There were no cool flights for today. Try it another day!</string>
 </resources>

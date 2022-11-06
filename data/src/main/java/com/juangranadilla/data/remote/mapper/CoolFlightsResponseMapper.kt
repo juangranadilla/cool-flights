@@ -12,7 +12,7 @@ fun CoolFlightRemoteObject.toModel(currency: String) = Flight(
     id,
     City(cityFrom, countryFrom.name, countryFrom.code),
     City(cityTo, countryTo.name, countryTo.code),
-    "$price${getCurrencySymbol(currency)}",
+    "%,.2f".format(price) + " ${getCurrencySymbol(currency)}",
     dTime.getCalendar(),
     aTime.getCalendar(),
     fly_duration

@@ -60,6 +60,8 @@ dependencies {
     implementation(Lib.core_ktx)
     implementation(Lib.compose_preview)
     implementation(Lib.compose_tooling_preview)
+    implementation(Lib.compose_livedata)
+    implementation(Lib.compose_viewmodel)
     implementation(Lib.activity_compose)
     implementation(Lib.orbit_compose_ui)
     implementation(Lib.orbit_compose_icons)

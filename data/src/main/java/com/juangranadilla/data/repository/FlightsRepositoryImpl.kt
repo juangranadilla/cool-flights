@@ -15,8 +15,12 @@ class FlightsRepositoryImpl(
 
     override fun getCoolFlights(): Flow<DataState<List<Flight>>> = flow {
         // TODO add logic to get maximum 5 random flights for a day (should not be repeated)
-        emit(DataState.Loading(true))
-        val allFlights = remote.getCoolFlights()
-        emit(DataState.Success(allFlights.subList(0, 5)))
+        try {
+            emit(DataState.Loading(true))
+            emit(remote.getCoolFlights())
+        } catch (throwable: Throwable) {
+            emit(DataState.Loading(false))
+            emit(DataState.Error("Error getting cool flights from repository", throwable))
+        }
     }
 }
