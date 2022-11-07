@@ -58,9 +58,10 @@ dependencies {
     androidTestImplementation(composeBom)
 
     implementation(Lib.core_ktx)
-    implementation(Lib.compose_material)
     implementation(Lib.compose_preview)
     implementation(Lib.compose_tooling_preview)
+    implementation(Lib.compose_livedata)
+    implementation(Lib.compose_viewmodel)
     implementation(Lib.activity_compose)
     implementation(Lib.orbit_compose_ui)
     implementation(Lib.orbit_compose_icons)
@@ -70,8 +71,7 @@ dependencies {
     implementation(Lib.coroutines)
     implementation(Lib.koin)
     implementation(Lib.koin_android)
-    implementation(Lib.glide)
-    annotationProcessor(Lib.glide_compiler)
+    implementation(Lib.coil_compose)
 }
 
 tasks.withType<KotlinCompile> {
