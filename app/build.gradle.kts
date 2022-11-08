@@ -6,6 +6,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs")
+    id("kotlin-kapt")
 }
 
 android {
@@ -72,6 +73,9 @@ dependencies {
     implementation(Lib.koin)
     implementation(Lib.koin_android)
     implementation(Lib.coil_compose)
+    implementation(Lib.room)
+    kapt(Lib.room_compiler)
+    implementation(Lib.room_ktx)
 }
 
 tasks.withType<KotlinCompile> {

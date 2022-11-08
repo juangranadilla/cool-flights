@@ -19,6 +19,7 @@ dependencies {
     implementation(Lib.retrofit)
     implementation(Lib.retrofit_gson_converter)
     implementation(Lib.okhttp3_logging_interceptor)
+    implementation(Lib.room_common)
 
     implementation(TestLib.mockito)
     testImplementation(TestLib.junit)

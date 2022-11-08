@@ -5,6 +5,7 @@ object AndroidSdk {
     const val targetSdk = 33
     const val compileSdk = 33
     const val applicationId = "com.juangranadilla.coolflights"
+    const val roomDataBaseApplicationId = "com.juangranadilla.roomdatabase"
     const val versionCode = 1
     const val versionName = "1.0"
 }
@@ -22,6 +23,7 @@ object Lib {
         const val activity_compose_version = "1.6.1"
         const val orbit_version = "0.21.0"
         const val compose_viewmodel = "2.5.1"
+        const val room_version = "2.4.3"
     }
 
     const val core_ktx = "androidx.core:core-ktx:${Version.core_ktx_version}"
@@ -43,6 +45,10 @@ object Lib {
     const val retrofit_gson_converter = "com.squareup.retrofit2:converter-gson:${Version.retrofit_version}"
     const val okhttp3_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${Version.okhttp3_version}"
     const val coil_compose = "io.coil-kt:coil-compose:${Version.coil_version}"
+    const val room ="androidx.room:room-runtime:${Version.room_version}"
+    const val room_compiler = "androidx.room:room-compiler:${Version.room_version}"
+    const val room_ktx = "androidx.room:room-ktx:${Version.room_version}"
+    const val room_common = "androidx.room:room-common:${Version.room_version}"
 }
 
 object TestLib {

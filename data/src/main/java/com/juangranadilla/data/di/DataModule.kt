@@ -20,7 +20,7 @@ val dataModule = module {
     single { provideRetrofit(client = get()) }
     single { provideService(retrofit = get()) }
     single<FlightsRemoteDataSource> { FlightsRemoteDataSourceImpl(service = get()) }
-    single<FlightsLocalDataSource> { FlightsLocalDataSourceImpl() }
+    single<FlightsLocalDataSource> { FlightsLocalDataSourceImpl(database = get()) }
     single<FlightsRepository> { FlightsRepositoryImpl(remote = get(), local = get()) }
 }
 
