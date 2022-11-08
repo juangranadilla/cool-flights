@@ -4,6 +4,7 @@ import android.app.Application
 import com.juangranadilla.data.di.dataModule
 import com.juangranadilla.domain.di.domainModule
 import com.juangranadilla.presentation.di.presentationModule
+import com.juangranadilla.room.di.databaseModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -14,7 +15,7 @@ class CoolFlightsApplication : Application() {
 
         startKoin {
             androidContext(this@CoolFlightsApplication)
-            modules(listOf(presentationModule, domainModule, dataModule))
+            modules(listOf(presentationModule, domainModule, dataModule, databaseModule))
         }
     }
 }
