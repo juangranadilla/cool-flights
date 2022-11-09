@@ -3,6 +3,7 @@ package com.juangranadilla.presentation.ui.activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.core.view.WindowCompat
 import com.juangranadilla.presentation.ui.compose.coolFlightsApp
 import com.juangranadilla.presentation.ui.viewmodel.CoolFlightsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -13,6 +14,9 @@ class CoolFlightsActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
         setContent {
             coolFlightsApp(viewModel)
         }
