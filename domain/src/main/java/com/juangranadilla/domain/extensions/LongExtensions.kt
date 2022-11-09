@@ -2,6 +2,11 @@ package com.juangranadilla.domain.extensions
 
 import java.util.*
 
-fun Long.getCalendar(): Calendar = Calendar.getInstance().apply { time = toDate() }
+fun Long.getCalendarFromMilliSeconds() =
+    Calendar.getInstance().apply { time = fromMilliSecondsToDate() }
 
-fun Long.toDate() = Date(this * 1000)
+fun Long.getCalendarFromUnix(): Calendar = Calendar.getInstance().apply { time = fromUnixToDate() }
+
+fun Long.fromMilliSecondsToDate() = Date(this)
+
+fun Long.fromUnixToDate() = Date(this * 1000)

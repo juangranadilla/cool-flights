@@ -16,16 +16,17 @@ import kiwi.orbit.compose.ui.controls.SurfaceCard
 @Composable
 fun SurfaceFlipCard(
     modifier: Modifier = Modifier,
-    face: Face,
+    face: Face = Face.Front,
     axis: RotationAxis = RotationAxis.AxisY,
-    onClick: (Face) -> Unit,
+    flipDuration: Int = 400,
     back: @Composable () -> Unit = {},
     front: @Composable () -> Unit = {},
+    onClick: (Face) -> Unit
 ) {
     val rotation = animateFloatAsState(
         targetValue = face.angle,
         animationSpec = tween(
-            durationMillis = 400,
+            durationMillis = flipDuration,
             easing = FastOutSlowInEasing
         )
     )
