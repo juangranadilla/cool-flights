@@ -39,9 +39,9 @@ fun coolFlightRow(
     SurfaceFlipCard(
         modifier = modifier.height(165.dp),
         face = face,
-        onClick = { face = face.next },
         front = { coolFlightRowFront(flight) },
-        back = { coolFlightRowBack(flight) }
+        back = { coolFlightRowBack(flight) },
+        onClick = { face = face.next }
     )
 }
 
