@@ -1,6 +1,6 @@
 package com.juangranadilla.domain.model
 
-import java.util.Calendar
+import java.util.*
 
 data class Flight(
     val id: String,
