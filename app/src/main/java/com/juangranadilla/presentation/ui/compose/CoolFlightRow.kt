@@ -49,7 +49,7 @@ fun coolFlightRow(
 fun coolFlightRowFront(flight: Flight = getPreviewFlight()) {
     AsyncImage(
         model = ImageRequest.Builder(LocalContext.current)
-            .data(flight.to.getImageUrl())
+            .data(flight.to.imageUrl)
             .crossfade(true)
             .build(),
         contentDescription = null,
@@ -185,8 +185,8 @@ fun CityAndTimeColumn(
 
 fun getPreviewFlight() = Flight(
     id = "2",
-    from = City("Madrid", "Spain", "ES"),
-    to = City("Budapest", "Hungary", "HU"),
+    from = City("Madrid", "Spain", "ES", "https://images.kiwi.com/photos/600x330/madrid_es.jpg"),
+    to = City("Budapest", "Hungary", "HU", "https://images.kiwi.com/photos/600x330/budapest_hu.jpg"),
     price = "81,00 €",
     departure = Calendar.getInstance(),
     arrival = Calendar.getInstance(),

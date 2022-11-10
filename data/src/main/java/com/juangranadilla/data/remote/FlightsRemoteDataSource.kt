@@ -1,9 +1,9 @@
 package com.juangranadilla.data.remote
 
 import com.juangranadilla.data.remote.mapper.toModel
+import com.juangranadilla.domain.extensions.getFormattedDate
 import com.juangranadilla.domain.model.Flight
 import com.juangranadilla.domain.result.DataState
-import java.text.SimpleDateFormat
 import java.util.*
 
 interface FlightsRemoteDataSource {
@@ -17,10 +17,10 @@ interface FlightsRemoteDataSource {
         flyFrom: String = "49.2-16.61-250km",
         flyTo: String = "anywhere",
         featureName: String = "aggregateResults",
-        departAfter: String = getFormattedDate(Calendar.getInstance().timeInMillis),
-        departBefore: String = getFormattedDate(
-            Calendar.getInstance().apply { add(Calendar.MONTH, 1) }.timeInMillis
-        ),
+        departAfter: String = Calendar.getInstance().timeInMillis.getFormattedDate(),
+        departBefore: String = Calendar.getInstance().apply {
+            add(Calendar.MONTH, 1)
+        }.timeInMillis.getFormattedDate(),
         flightType: String = "oneway",
         onePerDate: Int = 0,
         oneForCity: Int = 1,
@@ -81,8 +81,3 @@ class FlightsRemoteDataSourceImpl(
         } ?: DataState.Error("Error getting flights response from server")
     }
 }
-
-private fun getFormattedDate(time: Long): String = SimpleDateFormat(
-    "dd/MM/yyyy",
-    Locale.ENGLISH
-).format(time)
