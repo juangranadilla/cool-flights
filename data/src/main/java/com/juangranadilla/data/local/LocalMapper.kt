@@ -2,7 +2,6 @@ package com.juangranadilla.data.local
 
 import com.juangranadilla.data.local.entity.FlightEntity
 import com.juangranadilla.domain.extensions.getCalendarFromMilliSeconds
-import com.juangranadilla.domain.extensions.getCalendarFromUnix
 import com.juangranadilla.domain.model.City
 import com.juangranadilla.domain.model.Flight
 
@@ -11,9 +10,11 @@ fun Flight.toEntity(creationDay: String) = FlightEntity(
     from.name,
     from.countryCode,
     from.countryName,
+    from.imageUrl,
     to.name,
     to.countryCode,
     to.countryName,
+    to.imageUrl,
     price,
     departure.timeInMillis,
     arrival.timeInMillis,
@@ -23,8 +24,8 @@ fun Flight.toEntity(creationDay: String) = FlightEntity(
 
 fun FlightEntity.toModel() = Flight(
     id,
-    City(cityFrom, countryNameFrom, countryCodeFrom),
-    City(cityTo, countryNameTo, countryCodeTo),
+    City(cityFrom, countryNameFrom, countryCodeFrom, imageUrlFrom),
+    City(cityTo, countryNameTo, countryCodeTo, imageUrlTo),
     price,
     departureTime.getCalendarFromMilliSeconds(),
     arrivalTime.getCalendarFromMilliSeconds(),

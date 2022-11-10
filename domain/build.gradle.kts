@@ -1,4 +1,5 @@
 import com.juangranadilla.buildsrc.Lib
+import com.juangranadilla.buildsrc.TestLib
 
 plugins {
     id("java-library")
@@ -14,8 +15,8 @@ dependencies {
     implementation(Lib.coroutines)
     implementation(Lib.koin)
 
-    implementation(com.juangranadilla.buildsrc.TestLib.mockito)
-    testImplementation(com.juangranadilla.buildsrc.TestLib.junit)
-    testImplementation(com.juangranadilla.buildsrc.TestLib.kotlin_test)
-    testImplementation(com.juangranadilla.buildsrc.TestLib.kotlin_coroutines_test)
+    implementation(TestLib.mockito_kotlin)
+    testImplementation(TestLib.junit)
+    testImplementation(TestLib.kotlin_test)
+    testImplementation(TestLib.kotlin_coroutines_test)
 }

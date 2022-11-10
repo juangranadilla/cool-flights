@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import com.juangranadilla.buildsrc.AndroidSdk
 import com.juangranadilla.buildsrc.Lib
+import com.juangranadilla.buildsrc.TestLib
 
 plugins {
     id("com.android.application")
@@ -77,6 +78,11 @@ dependencies {
     implementation(Lib.room)
     kapt(Lib.room_compiler)
     implementation(Lib.room_ktx)
+
+    implementation(TestLib.mockito_kotlin)
+    testImplementation(TestLib.junit)
+    testImplementation(TestLib.kotlin_test)
+    testImplementation(TestLib.kotlin_coroutines_test)
 }
 
 tasks.withType<KotlinCompile> {

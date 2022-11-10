@@ -32,10 +32,10 @@ class FlightsLocalDataSourceImpl(private val database: DatabaseBridge) : Flights
             DataState.Error("Error inserting flights into database", throwable)
         }
     }
-
-    private fun getCreationDay(): String = "${
-        Calendar.getInstance().get(Calendar.DAY_OF_YEAR)
-    }_${
-        Calendar.getInstance().get(Calendar.YEAR)
-    }"
 }
+
+fun getCreationDay(): String = "${
+    Calendar.getInstance().get(Calendar.DAY_OF_YEAR)
+}_${
+    Calendar.getInstance().get(Calendar.YEAR)
+}"

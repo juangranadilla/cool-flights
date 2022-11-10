@@ -21,7 +21,7 @@ dependencies {
     implementation(Lib.okhttp3_logging_interceptor)
     implementation(Lib.room_common)
 
-    implementation(TestLib.mockito)
+    implementation(TestLib.mockito_kotlin)
     testImplementation(TestLib.junit)
     testImplementation(TestLib.kotlin_test)
     testImplementation(TestLib.kotlin_coroutines_test)
