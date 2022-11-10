@@ -67,6 +67,7 @@ dependencies {
     implementation(Lib.orbit_compose_ui)
     implementation(Lib.orbit_compose_icons)
     implementation(Lib.orbit_compose_illustrations)
+    implementation(Lib.accompanist_system_controller)
     implementation(Lib.livedata)
     implementation(Lib.viewmodel)
     implementation(Lib.coroutines)
